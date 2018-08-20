@@ -15,7 +15,7 @@ import About from './components/About';
 import Results from './components/Results';
 import Submit from './components/Submit';
 
-const domain = 'http://localhost:8080';
+const domain = '';
 
 class App extends Component {
   render() {
