@@ -1,0 +1,12 @@
+.imgs-cont {
+  overflow-y: hidden;
+}
+
+.img-cont {
+  display: flex;
+  flex-wrap: nowrap;
+  padding-bottom: 1rem;
+  margin-top: -1px;
+  overflow-x: auto;
+  text-align: center;
+}

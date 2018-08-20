@@ -1,0 +1,98 @@
+:root {
+  --jumbotron-padding-y: 3rem;
+}
+
+.jumbotron {
+  padding-top: var(--jumbotron-padding-y);
+  padding-bottom: var(--jumbotron-padding-y);
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: calc(var(--jumbotron-padding-y) * 2);
+    padding-bottom: calc(var(--jumbotron-padding-y) * 2);
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
+
+footer {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+footer p {
+  margin-bottom: 0.25rem;
+}
+
+.box-shadow {
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+nav {
+  z-index: 1000;
+}
+
+.alert {
+  border-radius: 0px;
+  border-left: none;
+  border-right: none;
+}
+
+.spinner {
+  border: 5px solid #f0f0f0;
+  border-top: 5px solid #249e38;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 10s ease infinite;
+  opacity: 0;
+  transition: opacity 0.8s;
+}
+.spinner.active {
+  opacity: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  11.111% {
+    transform: rotate(400deg);
+  }
+  22.222% {
+    transform: rotate(800deg);
+  }
+  33.333% {
+    transform: rotate(1200deg);
+  }
+  44.444% {
+    transform: rotate(1600deg);
+  }
+  55.555% {
+    transform: rotate(2000deg);
+  }
+  66.666% {
+    transform: rotate(2400deg);
+  }
+  77.777% {
+    transform: rotate(2800deg);
+  }
+  88.888% {
+    transform: rotate(3200deg);
+  }
+  100% {
+    transform: rotate(3600deg);
+  }
+}
