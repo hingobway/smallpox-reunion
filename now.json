@@ -1,0 +1,7 @@
+{
+  "env": {
+    "DB_URL": "@smallpox-db-url",
+    "PHOTO_KEY": "@smallpox-photo-key",
+    "PHOTO_SECRET": "@smallpox-photo-secret"
+  }
+}

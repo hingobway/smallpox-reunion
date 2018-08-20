@@ -1,0 +1,15 @@
+{
+  "short_name": "Smallpox Photos",
+  "name": "Smallpox Reunion Photos",
+  "icons": [
+    {
+      "src": "icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#343A40",
+  "background_color": "#ffffff"
+}
