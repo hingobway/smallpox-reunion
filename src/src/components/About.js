@@ -5,7 +5,7 @@ export default () => (
   <main role="main">
     <section className="jumbotron text-center pt-5">
       <div className="container">
-        <h1 className="jumbotron-heading">About the Contest</h1>
+        <h1 className="jumbotron-heading">About the Project</h1>
         <p className="lead text-muted">
           We're very excited to announce the Smallpox Reunion Official Photo
           Site! Here are the rules and workings in full. <br />
