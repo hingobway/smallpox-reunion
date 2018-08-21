@@ -1,4 +1,5 @@
 require('dotenv').config();
+const https = require('https');
 const express = require('express');
 const bp = require('body-parser');
 const mongoose = require('mongoose');
@@ -21,3 +22,7 @@ app.use(bp.urlencoded({ extended: true }));
 app.use('/api', require('./api'));
 
 app.use(express.static(__dirname + '/src/build'));
+
+setInterval(() => {
+  https.get('https://bangladesh-smallpox.now.sh/');
+}, 300000);

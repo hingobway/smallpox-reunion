@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import '../Results.css';
@@ -116,7 +117,15 @@ export default class Results extends Component {
               </p>
             </div>
           </section>
-          <section className="container">{entries}</section>
+          <section className="container">
+            {entries.length ? (
+              entries
+            ) : (
+              <p className="text-muted text-center">
+                Nothing here yet. <Link to="/submit">Submit yours!</Link>
+              </p>
+            )}
+          </section>
         </main>
       );
     } else
