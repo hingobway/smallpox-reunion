@@ -4,6 +4,7 @@
   "description": "Small Pox Reunion Photos",
   "main": "index.js",
   "scripts": {
+    "build": "cd src&&yarn&&yarn build",
     "start": "node index.js",
     "dev": "nodemon"
   },
