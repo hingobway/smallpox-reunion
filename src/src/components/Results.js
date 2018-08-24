@@ -23,7 +23,7 @@ export default class Results extends Component {
   }
 
   makeBig = e => {
-    const modal = JSON.parse($(e.currentTarget).data('info'));
+    const modal = JSON.parse(e.target.getAttribute('info'));
     this.setState({ modal });
     $('#pictureLarge').modal();
   };
@@ -40,14 +40,14 @@ export default class Results extends Component {
           <div
             key={ind}
             className="card mx-2"
-            data-info={info}
+            info={info}
             onClick={this.makeBig}
             style={{ cursor: 'pointer', minWidth: 240 }}
           >
-            <img src={img.url} className="card-img-top" alt="pic" />
-            <div className="card-body">
-              <p className="card-text">
-                <i>{img.caption}</i>
+            <img src={img.url} className="card-img-top" alt="pic" info={info} />
+            <div className="card-body" info={info}>
+              <p className="card-text" info={info}>
+                <i info={info}>{img.caption}</i>
               </p>
             </div>
           </div>
