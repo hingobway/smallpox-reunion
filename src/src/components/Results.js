@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import zlib from 'zlib';
 
 import '../Results.css';
 
 const $ = window.$;
+
+const encode = obj => zlib.deflateSync(JSON.stringify(obj)).toString('base64');
+const decode = str =>
+  JSON.parse(zlib.unzipSync(Buffer.from(str, 'base64')).toString());
 
 export default class Results extends Component {
   constructor(props) {
@@ -23,7 +28,7 @@ export default class Results extends Component {
   }
 
   makeBig = e => {
-    const modal = JSON.parse(e.target.getAttribute('info'));
+    const modal = decode(e.currentTarget.getAttribute('info'));
     this.setState({ modal });
     $('#pictureLarge').modal();
   };
@@ -31,23 +36,23 @@ export default class Results extends Component {
   render() {
     if (this.state.ready) {
       const image = user => (img, ind) => {
-        const info = JSON.stringify({
+        const info = {
           url: img.url,
           caption: img.caption,
           user: user
-        });
+        };
         return (
           <div
             key={ind}
             className="card mx-2"
-            info={info}
+            info={encode(info)}
             onClick={this.makeBig}
             style={{ cursor: 'pointer', minWidth: 240 }}
           >
-            <img src={img.url} className="card-img-top" alt="pic" info={info} />
-            <div className="card-body" info={info}>
-              <p className="card-text" info={info}>
-                <i info={info}>{img.caption}</i>
+            <img src={img.url} className="card-img-top" alt="pic" />
+            <div className="card-body">
+              <p className="card-text">
+                <i>{img.caption}</i>
               </p>
             </div>
           </div>
