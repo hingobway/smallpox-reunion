@@ -20,11 +20,12 @@ export default class Results extends Component {
   domain = this.props.domain;
 
   componentDidMount() {
-    axios
-      .get(this.domain + '/api/entry/all')
-      .then(({ data }) =>
-        this.setState({ entries: data.entries, ready: true })
-      );
+    axios.get(this.domain + '/api/entry/all').then(({ data }) => {
+      this.setState({ entries: data.entries, ready: true });
+      $(window.location.hash)
+        .get(0)
+        .scrollIntoView();
+    });
   }
 
   makeBig = e => {
