@@ -43,7 +43,9 @@ r.get('/entry/all', (req, res) => {
         out.after = await map(out.after, async cur =>
           parse('image', await Image.findById(cur))
         );
-        out.user = parse('user', await User.findById(out.user));
+        out.user = _.omit(parse('user', await User.findById(out.user)), [
+          'auth'
+        ]);
         return out;
       })
     })
